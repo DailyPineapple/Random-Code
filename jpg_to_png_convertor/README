@@ -1,0 +1,51 @@
+JPEG to PNG Converter
+Description
+The JPEG to PNG Converter is a GUI application built with Tkinter that allows users to convert JPEG images to PNG format. The application features multi-threading for efficient processing, making it suitable for batch conversions of multiple files within a selected directory.
+
+Features
+Directory Selection: Users can easily choose a folder containing JPEG files for conversion.
+Batch Conversion: Supports conversion of multiple JPEG files to PNG format simultaneously.
+Progress Tracking: Displays a progress bar and status messages to inform users of the conversion process.
+Cancellation Option: Allows users to cancel the conversion process at any time.
+Error Handling: Provides feedback on failed conversions and files that were skipped due to size constraints.
+Requirements
+Python 3.x
+Pillow for image handling
+Tkinter for the GUI (comes pre-installed with standard Python distributions)
+You can install the Pillow library using pip:
+
+bash
+Copy code
+pip install Pillow
+Usage
+Run the application by executing the script.
+
+bash
+Copy code
+python jpeg_to_png_converter.py
+Click the Choose Directory button to select a folder containing JPEG images.
+
+Click Start Conversion to begin the conversion process. The application will display progress and status messages.
+
+Use the Cancel Conversion button to stop the process at any time.
+
+Code Overview
+The application consists of the following key components:
+
+Class App: The main class that manages the Tkinter GUI and the conversion logic.
+Directory Selection: Utilizes filedialog.askdirectory() to let users choose a folder.
+Image Conversion: Converts JPEG files to PNG format using PIL.Image and handles file operations securely.
+Multi-threading: Uses concurrent.futures.ThreadPoolExecutor to perform conversions in parallel.
+Example
+To run the application, simply execute the following code:
+
+python
+Copy code
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = App(root)
+    root.mainloop()
+Notes
+The application removes the original JPEG files after successful conversion.
+If a converted PNG file is larger than the original JPEG, it will be skipped, and the user will be notified.
+Users can select another directory for conversion after the process is complete.

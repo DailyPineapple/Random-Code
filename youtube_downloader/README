@@ -1,0 +1,35 @@
+YouTube Downloader
+Description
+The YouTube Downloader is a simple GUI application built with Tkinter that allows users to download videos or audio from YouTube. This tool supports downloading in MP4 and MP3 formats and provides a progress bar to track the download status.
+
+Features:
+*URL Input: Users can enter the YouTube video URL they wish to download.
+*Format Selection: Options to download either as an MP4 video or MP3 audio.
+*Download Progress: A progress bar visually indicates the download progress.
+*Error Handling: The application provides error messages for failed downloads or invalid URLs.
+
+Requirements:
+*Python 3.x
+*pytube for downloading videos from YouTube
+
+Usage
+1)Run the application by executing the script:
+
+*python youtube_downloader.py
+
+2)Enter the desired YouTube video URL in the input field.
+
+3)Choose the format for download (MP4 or MP3).
+
+4)Click the Download button to start the download. The progress bar will update as the download proceeds.
+
+Code Overview:
+The application consists of the following key functions:
+
+*get_download_path(): Returns the default download directory based on the operating system (currently set for Windows).
+*on_progress(stream, chunk, bytes_remaining): Updates the progress bar based on the amount of data downloaded.
+*download_video(): Handles the video/audio download process, including format selection and error handling.
+
+Notes:
+*The default download location is set to the Downloads folder; you can modify the get_download_path() function to change this behavior.
+*Users should input valid YouTube URLs to avoid errors during the download process.

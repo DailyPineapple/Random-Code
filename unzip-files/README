@@ -1,0 +1,47 @@
+Unzip and Delete ZIP Files
+Description:
+The Unzip and Delete ZIP Files application is a Tkinter-based GUI tool that allows users to extract ZIP files from a selected directory and delete them after successful extraction. The application handles extraction in a separate thread, includes timeout management, and provides real-time feedback on the process through a scrolling text widget.
+
+Features:
+
+*Folder Selection: Users can select a folder containing ZIP files for extraction.
+
+*Unzip with Timeout: Each ZIP file is extracted with a configurable timeout, allowing the application to skip problematic files.
+
+*Delete ZIP Files: Successfully unzipped files are automatically deleted from the directory.
+
+*Real-Time Feedback: The application updates the user on the progress, including any errors or skipped files.
+
+*Threading Support: Uses threading to ensure the GUI remains responsive during the extraction process.
+
+Requirements:
+
+*Python 3.x
+
+*Tkinter for the GUI (comes pre-installed with standard Python distributions)
+
+Usage:
+1)Run the application by executing the script:
+
+python unzip_and_delete.py
+
+2)Click the Browse button to select a directory containing ZIP files.
+
+3)Click Start Unzip and Delete to begin the extraction and deletion process. The application will provide updates in the output text    area.
+
+Code Overview
+The application consists of the following key functions:
+
+*unzip_file(zip_file_path, output_folder, callback): Extracts a single ZIP file and calls a callback function upon completion or error.
+
+*handle_unzip_with_timeout(zip_file_path, output_folder, timeout, text_widget): Manages the unzipping process with a timeout and updates the GUI with results.
+
+*unzip_and_delete(zip_folder, text_widget, timeout=10): Finds and extracts all ZIP files in the selected folder, deleting them upon successful extraction.
+
+*select_folder(): Opens a dialog for the user to select a folder.
+
+*start_unzip_process(): Initiates the unzipping process based on the selected folder.
+
+Notes
+The application will inform users if a folder does not contain any ZIP files or if there are any errors during extraction.
+The timeout for unzipping can be adjusted in the unzip_and_delete function by changing the timeout parameter.

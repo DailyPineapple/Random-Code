@@ -1,0 +1,53 @@
+HTML to PDF Converter
+Description
+The HTML to PDF Converter is a Flask-based web application that allows users to upload HTML files and convert them into PDF format. This tool is useful for anyone needing to generate PDFs from web content or HTML documents.
+
+Features
+File Upload: Users can upload HTML files through a web interface.
+PDF Generation: Converts uploaded HTML files into PDF format using pdfkit and wkhtmltopdf.
+File Download: Allows users to download the generated PDF files.
+Usage
+Ensure that you have Flask, pdfkit, and werkzeug installed. You can install them using pip:
+
+bash
+Copy code
+pip install Flask pdfkit werkzeug
+Update the WKHTMLTOPDF_PATH variable with the path to your wkhtmltopdf executable.
+
+Create the necessary directories for uploads and PDF files by running the script.
+
+Run the Flask application:
+
+bash
+Copy code
+flask run
+Access the upload form at http://127.0.0.1:5000/upload in your web browser.
+
+Endpoints
+GET /upload: Displays the HTML upload form.
+POST /upload: Handles file uploads and PDF conversion.
+GET /pdfs/<filename>: Downloads the generated PDF file.
+Example HTML Form
+The application requires a simple HTML form for file uploads, which can be created as follows:
+
+html
+Copy code
+<!-- templates/upload_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload HTML File</title>
+</head>
+<body>
+    <h1>Upload HTML File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".html" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
+Notes
+Ensure that the uploaded files are valid HTML documents.
+The application secures filenames to prevent directory traversal attacks.
+Generated PDFs are stored in the pdfs directory, and the original HTML files are saved in the uploads directory.

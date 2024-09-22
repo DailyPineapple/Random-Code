@@ -1,0 +1,19 @@
+Image Warmth Sorter
+Description:
+The Image Warmth Sorter is a Python script that sorts images based on their warmth scores, which are calculated using the intensity of the red color channel and overall brightness. This tool can be useful for photographers, designers, or anyone looking to organize images based on their color temperature.
+
+Features:
+Warmth Calculation: Determines the warmth of each image by evaluating the average red intensity and overall brightness.
+Image Sorting: Sorts images in a specified directory based on their calculated warmth scores.
+Output: Saves the sorted images to a designated output folder.
+
+Usage:
+Set the input_directory variable to the path containing your images.
+Set the output_directory variable to the desired output folder path.
+Run the script. The images will be sorted by warmth and saved in the output folder.
+
+Requirements:
+Python 3.x
+OpenCV (cv2)
+NumPy
+Standard library modules: os, shutil
